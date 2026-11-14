@@ -14,8 +14,9 @@ that still reads at small size.
 `main.py` (Python 3.13 standard library only) copies the image held
 in this repository (`entry.png`) to `$MAKEFUN_OUTPUT_DIR/entry.png`
 (default `/output`). A straight byte-for-byte copy means the two runs
-the grader performs always write identical output. No network, no
-other files read.
+the grader performs always write identical output. The copy is
+verified by comparing SHA-256 digests of source and destination, so
+a corrupt copy can never pass silently. No network, no other files read.
 
 ## The image
 
